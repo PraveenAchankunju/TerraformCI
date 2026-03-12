@@ -1,19 +1,19 @@
 terraform {
-  required_version = ">=1.3.0"terraform init
+  required_version = ">=1.3.0"
   required_providers {
     azurerm = {
       "source" = "hashicorp/azurerm"
       version  = "3.43.0"
     }
   }
-  cloud { 
-    
-    organization = "praveenachankunju" 
+  cloud {
 
-    workspaces { 
-      name = "TerraformCI" 
-    } 
-  } 
+    organization = "praveenachankunju"
+
+    workspaces {
+      name = "TerraformCI"
+    }
+  }
 }
 
 provider "azurerm" {
@@ -22,9 +22,9 @@ provider "azurerm" {
 }
 
 resource "random_string" "uniquestring" {
-  length           = 20
-  special          = false
-  upper            = false
+  length  = 20
+  special = false
+  upper   = false
 }
 
 resource "azurerm_resource_group" "rg" {
